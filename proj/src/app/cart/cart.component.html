@@ -1,0 +1,61 @@
+<!--<h1 style="color:blue; text-align: center;">LapTop Cart</h1>
+<div class="container">
+<div class="card-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>ProductName</th>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let item of items">
+                <td><img src="{{item.image}}" height="100" width="100"></td> 
+                <td><span>{{item.productname}}</span></td>
+                <td><span>{{item.description}}</span></td>
+                <td><span>{{item.price}}</span></td>
+                </tr>
+        </tbody>
+    </table>
+    <br>
+    <button style="background-color: brown; text-align: center;" (click)="payNow()">PayAmount</button>
+</div>
+</div>-->
+
+<div class="shopping-cart">
+    <!-- Title -->
+    <div class="title">Shopping Bag</div>
+    <ng-container *ngIf="isLoggedIn()">
+      <div class="items" *ngFor="let items of cartItems">
+      <div class="buttons">
+        <span class="delete-btn" (click)="removeItem(items)"></span>
+        <span class="like-btn" (click)="toggleLike(items)" [class.is-active]="isLikeActive"></span>
+      </div>
+      <div class="image">
+        <img src="{{items.product.image}}"alt="" height="100" width="60">
+      </div>
+      <div class="description">
+        <span>{{items.product.productname}}</span>
+        <span>{{items.product.description}}</span>
+      </div>
+      <div class="quantity">
+        <button class="plus-btn but" (click)="incrementQuantity(items)"  type="button" name="button">+</button>
+        <input type="text" name="name" [value]="items.quantity" readonly value="1">
+        <button class="minus-btn but" (click)="decrementQuantity(items)" type="button" name="button">-</button>
+      </div>
+      <div class="total-price">{{items.product.price * items.quantity}}</div>
+    </div>
+  </ng-container>
+  </div>
+  <div class="btnn"><button type="button" class="btn btn-dark btn-lg" routerLink="/checkout">Check out</button></div>
+
+
+
+
+
+
+
+
+  

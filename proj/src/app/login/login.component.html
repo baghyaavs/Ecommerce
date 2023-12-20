@@ -1,0 +1,30 @@
+<body id="l1">
+    <section class="login-block">
+      <div class="container">
+          <div class="row ">
+              <div class="col login-sec">
+                  <h2 class="text-center">Login Now</h2>
+                  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group" class="label-margin">
+                      <label for="email" class="text-uppercase">Email</label>
+                      <input class="a2" type="email"  class="form-control" name="email" placeholder="email" id="email" formControlName="email" required >
+                  </div>
+                  <div class="form-group" class="label-margin">
+                      <label for="pwd" class="text-uppercase">Password</label>
+                      <input  class="a2" class="form-control" type="password"   name="userPassword" placeholder="password" id="userPassword" formControlName="userPassword"  required >
+                  </div>
+                  <div class="form-group">  
+                      <div class="center">
+                      <button id="btn-login" [disabled]="loginForm.invalid">Submit</button>
+                    </div>
+                  </div>
+                  <div class="form-group" id="a1">
+                  Create new account ? Please <a  href="javascript:void(0);" routerLink="/register">Register</a>
+                  </div>
+                
+                  </form>
+              </div>
+          </div>
+      </div>
+    </section>
+    </body>

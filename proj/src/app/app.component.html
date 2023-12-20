@@ -1,0 +1,121 @@
+<header>
+  <!--header of the website-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/logo.png" alt="ELAN" width="100" height="100">
+        </a>
+        <div>
+          <ng-container *ngIf="!isLoggedIn(); else logoutTemplate">
+          <button type="button" class="btn btn-link a2 " routerLink="/login">Login</button>
+        </ng-container>
+        <ng-template #logoutTemplate>
+          <button type="button" class="btn btn-link a2 " (click)="logout()">Logut</button>
+        </ng-template>
+        <!--</div>
+        <div class="dropdown">
+          <button  id="a2"  class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img id="image1"  src="assets/avatar.png" alt="profile">
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/myOrders">Orders</a></li>
+          </ul>
+        </div>
+        <div>-->
+          <button  type="button" class="btn btn-secondary a3" routerLink="/cart">
+            <i style="font-size: 36px;" class="fa fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger"></div>  
+        </button> 
+      </div>
+      </div>
+      </nav>  
+</header>
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+
+
+<!--footer section-->
+<footer>
+  <div class="footer-row">
+    <div class="footer-col-1">
+      <div class="footer-heading">
+        <p>ABOUT</p>
+      </div>
+      <div class="footer-list">
+        <a routerLink="/privacy">We Respect Your Privacy</a>
+        <a routerLink="/terms">Terms & Conditions</a>
+        <a routerLink="/fees">Fees & Payments</a>
+        <a routerLink="/returns">Returns & Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-col-2">
+      <div class="footer-heading">
+        <p>HELP</p>
+      </div>
+      <div class="footer-list">
+        <a href="#">Track your Order</a>
+        <a routerLink="/faq">Frequently Asked Questions</a> 
+        <a data-bs-toggle="modal" data-bs-target="#exampleModal">Customer Care</a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Any Queries reach us</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">Toll Free No: 1800-000-123. Email us: Elan&#64;Customercare.com.</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer-col-3">
+      <div class="footer-heading">
+        <p>SHOP BY</p>
+      </div>
+      <div class="footer-list">
+        <a routerLink="/men">Men</a>
+        <a routerLink="/women">Ladies</a>
+        <a routerLink="/kids">Kids</a>
+        <a routerLink="/">Home</a>
+        <a routerLink="/grocery">Grocery</a>
+      </div>
+    </div>
+    <div class="footer-col-4">
+      <div class="footer-heading">
+        <p>FOLLOW US</p>
+      </div>
+      <div class="footer-list">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="footer-row2">
+    <p>Payment methods</p>
+  </div>
+  <div class="footer-row3">
+    <div class="footer-row2-col">
+      <img class="image" src="assets/netbanking.png" alt="net banking">
+    </div>
+    <div class="footer-row2-col">
+      <img class="image" src="assets/visa.png" alt="visa">
+    </div>
+    <div class="footer-row2-col">
+      <img class="image" src="assets/mastercard.png" alt="master card">
+    </div>
+    <div class="footer-row2-col">
+      <img class="image" src="assets/cod.png" alt="cash on delivery">
+    </div>
+  </div>
+</footer>
+
